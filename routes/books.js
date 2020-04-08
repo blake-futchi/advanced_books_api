@@ -3,7 +3,7 @@ const router = express.Router();
 
 /* GET books listing. */
 router.get('/', (req, res, next) => {
-  res.json({users: [{title: 'The Bible'}]});
+  res.json({books: [{title: 'The Bible'}]});
 });
 
 module.exports = router;

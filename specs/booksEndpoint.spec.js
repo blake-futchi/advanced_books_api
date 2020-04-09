@@ -31,3 +31,13 @@ describe('GET /api/vi/books', () => {
     expect(response.body.books[0].title).to.equal('Learning node with Blake')
   });
 });
+
+describe('GET /api/v1/books/:id', () => {
+  before (async () => {
+    response = await request.get('/api/v1/books/3')
+  })
+
+  it('responds with a single book', () => {
+    expect(response.body.book.id).to.equal(3)
+  })
+});

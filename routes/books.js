@@ -1,8 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const {index} = require('../controllers/booksController')
+const booksController = require('../controllers/booksController')
 
 /* GET books listing. */
-router.get('/', index);
+router
+.get('/', booksController.index)
+.get('/:id', booksController.show)
 
 module.exports = router;

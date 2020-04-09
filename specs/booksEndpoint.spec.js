@@ -23,8 +23,7 @@ describe('GET /api/vi/books', () => {
     expect(response.status).to.equal(200)
   });
 
-  it('responds with list of books', () => {
-    const expectedBody = { books: [{title: 'The Bible'}] }
-    expect(jsonResponse(response)).to.equal(JSON.stringify(expectedBody))
+  it('responds with list of books as an array', () => {
+    expect(response.body.books).to.be.an('array')
   });
 });

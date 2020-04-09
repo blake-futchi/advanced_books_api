@@ -26,4 +26,8 @@ describe('GET /api/vi/books', () => {
   it('responds with list of books as an array', () => {
     expect(response.body.books).to.be.an('array')
   });
+
+  it('returns title for books', () => {
+    expect(response.body.books[0].title).to.equal('Learning node with Blake')
+  });
 });
